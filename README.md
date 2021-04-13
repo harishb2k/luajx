@@ -1,4 +1,4 @@
-# luajx
+```java
 
 package luajx;
 
@@ -25,3 +25,16 @@ e.eval(
   "require 'luajx.util' " +
   "output = util.ListGetNumberAtIndex(input_array, 0) "
 );
+
+```
+
+#### How to access Array in Lua
+```java
+ Map<String, Object> data = new HashMap<>();
+        e.put("output", 0);
+        e.put("input_array", Arrays.asList(1, 2L, 3.0f, 4.0, 5.1, 6.1, longValue).toArray());
+
+
+        e.eval("output = input_array[1] ");
+        assertEquals(1, e.get("output"));
+```
